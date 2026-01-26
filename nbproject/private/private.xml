@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/dao/ClassDAO.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/controller/ItemController.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/main/Main.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/dao/DBImplementation.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/controller/CartWindowController.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/GameType.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/CartItem.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/Purchase.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/view/MarketWindow.fxml</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/User.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/Admin.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/utilities/CartStorage.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/Profile.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/controller/MarketWindowController.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/BoosterPack.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/Card.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/view/CartWindow.fxml</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/Product.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/controller/MenuWindowController.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/model/BoosterBox.java</file>
+            <file>file:/C:/Users/2dam/Desktop/RetoCRUD/src/view/item.fxml</file>
+        </group>
+    </open-files>
+</project-private>
