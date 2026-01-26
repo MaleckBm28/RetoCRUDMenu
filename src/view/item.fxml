@@ -34,6 +34,12 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
+                
+                <Label fx:id="lblStock" text="Stock: --" textFill="#666666">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
 
                 <AnchorPane prefHeight="40.0" prefWidth="200.0">
                     <children>

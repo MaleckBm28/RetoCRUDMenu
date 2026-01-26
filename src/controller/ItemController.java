@@ -24,6 +24,9 @@ public class ItemController {
     @FXML private Label lblPrice;
     @FXML private Spinner<Integer> spinnerAmount;
     @FXML private Button btnAdd;
+    
+    // 1. AÑADE ESTA LÍNEA (Asegúrate que coincide con el fx:id del FXML)
+    @FXML private Label lblStock; 
 
     private Product product;
 
@@ -34,21 +37,42 @@ public class ItemController {
         lblName.setText(product.getName());
         lblPrice.setText("€" + String.format("%.2f", product.getPrice()));
 
-        // Spinner según stock TOTAL (el control fino lo hacemos al añadir)
-        int stockActual = product.getStock();
+        // --- 2. LÓGICA NUEVA DE STOCK VISUAL ---
+        
+        int stockTotal = product.getStock();
+        // Consultamos cuánto hay ya en el carrito para restarlo
+        int enCarrito = getQuantityAlreadyInCart(product.getProductId());
+        int disponiblesReal = stockTotal - enCarrito;
 
-        if (stockActual > 0) {
+        // Actualizamos la etiqueta visual
+        if (lblStock != null) {
+            lblStock.setText("Stock: " + disponiblesReal);
+        }
+
+        // Configuramos el Spinner y el Botón según lo que REALMENTE queda
+        if (disponiblesReal > 0) {
+            // El máximo del spinner es lo que queda disponible, no el total absoluto
             spinnerAmount.setValueFactory(
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, stockActual, 1)
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, disponiblesReal, 1)
             );
             spinnerAmount.setDisable(false);
 
             btnAdd.setDisable(false);
             btnAdd.setText("Add to Cart");
         } else {
+            // Si disponiblesReal es 0 (aunque haya en BD, si está todo en el carrito) bloqueamos
+            spinnerAmount.setValueFactory(
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 0, 0)
+            );
             spinnerAmount.setDisable(true);
             btnAdd.setDisable(true);
-            btnAdd.setText("Sin Stock");
+            
+            // Mensaje diferenciado si es por falta de stock o porque ya lo tienes todo
+            if (stockTotal > 0) {
+                 btnAdd.setText("En tu carrito");
+            } else {
+                 btnAdd.setText("Agotado");
+            }
         }
 
         // Cargar imagen
@@ -67,57 +91,59 @@ public class ItemController {
 
     @FXML
     private void addToCart(ActionEvent event) {
-
         if (product == null) return;
 
         Integer qtySelectedObj = spinnerAmount.getValue();
-        if (qtySelectedObj == null) return;
+        if (qtySelectedObj == null || qtySelectedObj == 0) return; // Protección extra
 
         int qtySelected = qtySelectedObj;
-
+        
+        // Volvemos a calcular por seguridad (por si el usuario tardó mucho en clicar)
         int stockTotal = product.getStock();
         int alreadyInCart = getQuantityAlreadyInCart(product.getProductId());
         int available = stockTotal - alreadyInCart;
 
-        // Si ya no queda stock disponible por lo que hay en el carrito
         if (available <= 0) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Stock insuficiente");
-            alert.setHeaderText(null);
-            alert.setContentText("No quedan unidades disponibles de:\n" + product.getName());
-            alert.showAndWait();
+            mostrarAlerta("Stock insuficiente", "No quedan unidades disponibles (revisa tu carrito).");
+            // Refrescamos la vista visualmente por si acaso
+            setData(this.product); 
             return;
         }
 
-        // Si intenta añadir más de lo que queda disponible
         if (qtySelected > available) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Stock insuficiente");
-            alert.setHeaderText(null);
-            alert.setContentText(
-                "Solo quedan " + available + " unidades disponibles de:\n" + product.getName()
-            );
-            alert.showAndWait();
+            mostrarAlerta("Stock insuficiente", "Solo puedes añadir " + available + " más.");
             return;
         }
 
-        // Guardar en fichero
         try {
             CartStorage.add(product, qtySelected);
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Carrito");
-            alert.setHeaderText(null);
-            alert.setContentText("Añadido al carrito:\n" + product.getName() + " x" + qtySelected);
-            alert.showAndWait();
+            
+            mostrarAlertaInfo("Carrito", "Añadido: " + product.getName() + " x" + qtySelected);
+            
+            // --- 3. IMPORTANTE: REFRESCAR LA VISTA AL INSTANTE ---
+            // Al llamar a setData de nuevo, se recalcula el stock restante y se actualiza el spinner/etiqueta
+            setData(this.product);
 
         } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("No se pudo añadir al carrito");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+            mostrarAlerta("Error", "No se pudo guardar: " + e.getMessage());
         }
+    }
+
+    // Métodos auxiliares para no repetir código de alertas
+    private void mostrarAlerta(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(contenido);
+        alert.showAndWait();
+    }
+    
+    private void mostrarAlertaInfo(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(contenido);
+        alert.showAndWait();
     }
 
     private int getQuantityAlreadyInCart(int productId) {
@@ -128,7 +154,7 @@ public class ItemController {
                 }
             }
         } catch (IOException e) {
-            // Si falla leer el fichero, asumimos 0 para no bloquear la app
+            return 0;
         }
         return 0;
     }

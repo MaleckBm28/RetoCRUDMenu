@@ -69,7 +69,7 @@ INSERT INTO CARD (PRODUCT_ID, RARITY) VALUES
 -- =========================
 
 INSERT INTO PRODUCT (PRODUCT_ID, NAME, PRICE, GAME_TYPE, STOCK, IMAGE_PATH) VALUES
-(30, 'Digimon New Evolution - Box', 85.00, 'DIGIMON', 12, '/imgmarket/digi/Digimon_Box.jpg'),
+(30, 'Digimon New Evolution - Box', 85.00, 'DIGIMON', 0, '/imgmarket/digi/Digimon_Box.jpg'),
 (31, 'Digimon New Evolution - Pack', 3.90, 'DIGIMON', 60, '/imgmarket/digi/Digimon_Pack.jpg'),
 (32, 'Agumon Alternate Art', 12.00, 'DIGIMON', 4, '/imgmarket/digi/Agumon.jpg'),
 (33, 'Gabumon', 8.00, 'DIGIMON', 10, '/imgmarket/digi/Gabumon.jpg'),
