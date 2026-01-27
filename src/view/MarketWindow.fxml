@@ -31,33 +31,33 @@
               AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0">
 
-             <!-- Menu barra -->
+            <!-- Menu barra -->
             <MenuBar style="-fx-background-color: #f4f4f4;">
-              <menus>
-                <Menu mnemonicParsing="false" text="opc1">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#handleClose" text="Cerrar Aplicación" />
-                  </items>
-                </Menu>
+                <menus>
+                    <Menu mnemonicParsing="false" text="opc1">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleClose" text="Cerrar Aplicación" />
+                        </items>
+                    </Menu>
                 
-                <Menu mnemonicParsing="false" text="opc2">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Pantalla Completa" />
-                  </items>
-                </Menu>
+                    <Menu mnemonicParsing="false" text="opc2">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="Pantalla Completa" />
+                        </items>
+                    </Menu>
                 
-                <Menu mnemonicParsing="false" text="Actions">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Report" />
-                  </items>
-                </Menu>
+                    <Menu mnemonicParsing="false" text="Actions">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleReport" text="Report" />
+                        </items>
+                    </Menu>
                 
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#handleHelp" text="Ayuda" />
-                  </items>
-                </Menu>
-              </menus>
+                    <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleHelp" text="Ayuda" />
+                        </items>
+                    </Menu>
+                </menus>
             </MenuBar>
             
             

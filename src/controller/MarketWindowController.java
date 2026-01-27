@@ -1,5 +1,11 @@
 package controller;
 
+import java.util.Comparator;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.input.MouseButton;
+
 import dao.DBImplementation;
 import java.io.IOException;
 import java.net.URL;
@@ -27,11 +33,23 @@ import model.GameType;
 import model.Product;
 import model.Card;
 
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+import java.util.HashMap;
+import java.sql.Connection;
+import pull.ConnectionPool;
+
 public class MarketWindowController implements Initializable {
 
-    @FXML private GridPane grid;
-    @FXML private MenuButton menuGameType;
-    @FXML private MenuButton menuRarity;
+    @FXML
+    private GridPane grid;
+    @FXML
+    private MenuButton menuGameType;
+    @FXML
+    private MenuButton menuRarity;
 
     private List<Product> allProducts = new ArrayList<>();
     private DBImplementation db = new DBImplementation();
@@ -40,6 +58,7 @@ public class MarketWindowController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         loadDataFromDatabase();
         setupFilters();
+        setupContextMenu();
     }
 
     private void loadDataFromDatabase() {
@@ -65,7 +84,7 @@ public class MarketWindowController implements Initializable {
         // --- B. FILTRO RAREZAS  ---
         if (menuRarity != null) {
             menuRarity.getItems().clear();
-            String[] rarezas = {"Common", "Rare", "Epic", "Legendary", "Special"};
+            String[] rarezas = {"Common", "Special" , "Rare", "Epic", "Legendary"};
             for (String r : rarezas) {
                 CheckMenuItem item = new CheckMenuItem(r);
                 item.selectedProperty().addListener((obs, wasSelected, isSelected) -> applyFilters());
@@ -94,7 +113,7 @@ public class MarketWindowController implements Initializable {
                 }
             }
         }
-        
+
         // 3. Forzar actualización (mostrar todo)
         applyFilters();
     }
@@ -128,7 +147,7 @@ public class MarketWindowController implements Initializable {
                 if (p instanceof Card) {
                     matchRarity = selectedRarities.contains(((Card) p).getRarity());
                 } else {
-                    matchRarity = false; 
+                    matchRarity = false;
                 }
             }
             return matchGame && matchRarity;
@@ -159,7 +178,7 @@ public class MarketWindowController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void openCart() {
         try {
@@ -176,10 +195,9 @@ public class MarketWindowController implements Initializable {
 
     @FXML
     private void openUser() {
-        System.out.println("👤 Usuario pulsado");
+        System.out.println(" Usuario pulsado");
     }
-    
-    
+
     @FXML
     private void handleHelp(ActionEvent event) {
         System.out.println("ℹ Abriendo ventana de Ayuda...");
@@ -192,5 +210,123 @@ public class MarketWindowController implements Initializable {
         System.out.println("Cerrando aplicación...");
         Platform.exit(); // Cierra la app de forma elegante
         System.exit(0);
+    }
+
+    @FXML
+    private void handleReport(ActionEvent event) {
+        Connection con = null;
+        try {
+            System.out.println(" Generando informe...");
+
+            // 1. Obtener conexión de TU Pool (importante para que tenga datos)
+            con = ConnectionPool.getConnection();
+
+            // 2. Definir parámetros (si tu informe los necesita, si no, mapa vacío)
+            HashMap<String, Object> parameters = new HashMap<>();
+            // Ejemplo: parameters.put("TipoJuego", "Magic"); 
+
+            // 3. Cargar el diseño del informe (Compilamos el .jrxml al vuelo)
+            // NOTA: Asegúrate de que el archivo 'MarketReport.jrxml' está en 'src/report/'
+            JasperReport report = JasperCompileManager.compileReport(
+                    getClass().getResourceAsStream("/report/MarketReport.jrxml")
+            );
+
+            // 4. Llenar el informe con datos de la BD
+            JasperPrint print = JasperFillManager.fillReport(report, parameters, con);
+
+            // 5. Mostrar el visor
+            // El 'false' final es CRÍTICO: evita que al cerrar el informe se cierre toda la App
+            JasperViewer viewer = new JasperViewer(print, false);
+            viewer.setTitle("Informe de Mercado");
+            viewer.setVisible(true);
+
+        } catch (Exception e) {
+            System.err.println(" Error al generar el informe:");
+            e.printStackTrace();
+            // Sería buena idea mostrar un Alert de error aquí
+        } finally {
+            try {
+                if (con != null) {
+                    con.close(); // <--- Al ser un Pool, esto la "suelta" y la devuelve disponible
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+    
+    private void setupContextMenu() {
+        // 1. Crear el Menú
+        ContextMenu contextMenu = new ContextMenu();
+
+        // 2. Opciones de ORDENACIÓN (Lo que le falta a tu barra)
+        MenuItem sortNameAsc = new MenuItem(" Ordenar por Nombre (A-Z)");
+        MenuItem sortNameDesc = new MenuItem(" Ordenar por Nombre (Z-A)");
+        MenuItem sortPriceAsc = new MenuItem(" Precio: Menor a Mayor");
+        MenuItem sortPriceDesc = new MenuItem(" Precio: Mayor a Menor");
+        
+        // 3. Opción de REFRESCO REAL (Conectar con BD de nuevo)
+        MenuItem refreshDB = new MenuItem(" Actualizar Stock (BD)");
+
+        // --- LÓGICA DE ORDENACIÓN ---
+        sortNameAsc.setOnAction(e -> {
+            allProducts.sort(Comparator.comparing(Product::getName));
+            populateGrid(allProducts); // Repintamos ordenado
+        });
+
+        sortNameDesc.setOnAction(e -> {
+            allProducts.sort(Comparator.comparing(Product::getName).reversed());
+            populateGrid(allProducts);
+        });
+
+        sortPriceAsc.setOnAction(e -> {
+            allProducts.sort(Comparator.comparing(Product::getPrice));
+            populateGrid(allProducts);
+        });
+
+        sortPriceDesc.setOnAction(e -> {
+            allProducts.sort(Comparator.comparing(Product::getPrice).reversed());
+            populateGrid(allProducts);
+        });
+
+        // --- LÓGICA DE REFRESCO ---
+        // Esto es útil si otro usuario compra algo y quieres ver el stock real YA
+        refreshDB.setOnAction(e -> {
+            System.out.println("Recargando datos desde la Base de Datos...");
+            loadDataFromDatabase(); // Vuelve a hacer el SELECT a la BD
+            // Opcional: Si quieres mantener los filtros visuales o borrarlos:
+            // clearFilters(); 
+        });
+
+        // 4. Añadimos todo al menú con separadores bonitos
+        contextMenu.getItems().addAll(
+            sortPriceAsc, sortPriceDesc, 
+            new SeparatorMenuItem(),
+            sortNameAsc, sortNameDesc,
+            new SeparatorMenuItem(), 
+            refreshDB
+        );
+
+        // 5. Pegar el menú al Grid (Click Derecho)
+        grid.setOnMouseClicked(event -> {
+            if (event.getButton() == MouseButton.SECONDARY) {
+                contextMenu.show(grid, event.getScreenX(), event.getScreenY());
+            } else {
+                contextMenu.hide();
+            }
+        });
+
+        // Truco para que funcione también si pinchas en el fondo blanco (fuera de las cartas)
+        if (grid.getParent() != null) {
+            grid.getParent().setOnMouseClicked(event -> {
+                if (event.getButton() == MouseButton.SECONDARY) {
+                    contextMenu.show(grid, event.getScreenX(), event.getScreenY());
+                    event.consume(); 
+                } else {
+                    contextMenu.hide();
+                }
+            });
+        }
     }
 }
