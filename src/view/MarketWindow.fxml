@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -14,6 +15,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0"
             xmlns="http://javafx.com/javafx/21"
@@ -27,6 +31,37 @@
               AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0">
 
+             <!-- Menu barra -->
+            <MenuBar style="-fx-background-color: #f4f4f4;">
+              <menus>
+                <Menu mnemonicParsing="false" text="opc1">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleClose" text="Cerrar Aplicación" />
+                  </items>
+                </Menu>
+                
+                <Menu mnemonicParsing="false" text="opc2">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Pantalla Completa" />
+                  </items>
+                </Menu>
+                
+                <Menu mnemonicParsing="false" text="Actions">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Report" />
+                  </items>
+                </Menu>
+                
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleHelp" text="Ayuda" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            
+            
+            
             <!-- HEADER LOGO -->
             <AnchorPane prefHeight="60.0" style="-fx-background-color: white;">
                 <children>
@@ -53,24 +88,34 @@
 
                             <VBox spacing="5.0">
                                 <children>
-                                    <Label text="Game Type">
+                                    <Label text="Tipos de Juego">
                                         <font>
-                                            <Font name="System Bold" size="12.0"/>
+                                            <Font name="System Bold" size="12.0" />
                                         </font>
                                     </Label>
-                                    <ComboBox fx:id="comboGameType"
-                                              prefWidth="150.0"
-                                              promptText="Select All"/>
+                                    <MenuButton fx:id="menuGameType" mnemonicParsing="false" prefWidth="150.0" text="Seleccionar Juegos" />
                                 </children>
                             </VBox>
 
-                            <Button text="SEARCH"
-                                    onAction="#reloadMarket"
-                                    translateY="10.0"
-                                    prefWidth="100.0"
-                                    style="-fx-background-color:#555; -fx-text-fill:white; -fx-cursor:hand;">
+                            <VBox spacing="5.0">
+                                <children>
+                                    <Label text="Rareza">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                    <MenuButton fx:id="menuRarity" mnemonicParsing="false" prefWidth="150.0" text="Seleccionar Rareza" />
+                                </children>
+                            </VBox>
+
+                            <Button text="BORRAR FILTROS" 
+                                    onAction="#clearFilters" 
+                                    prefHeight="30.0" 
+                                    prefWidth="130.0" 
+                                    style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-cursor: hand; -fx-font-weight: bold;" 
+                                    translateY="10.0">
                                 <font>
-                                    <Font name="System Bold" size="12.0"/>
+                                    <Font size="11.0" />
                                 </font>
                             </Button>
 
