@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 import model.Admin;
 import model.Product;
 import model.Profile;
@@ -21,6 +22,9 @@ import threads.HiloConnection;
  * Author: acer
  */
 public class DBImplementation implements ClassDAO {
+    
+    
+    private static final Logger LOGGER = Logger.getLogger(DBImplementation.class.getName());
 
     private PreparedStatement stmt;
 
@@ -63,6 +67,9 @@ public class DBImplementation implements ClassDAO {
             this.con = java.sql.DriverManager.getConnection(this.urlDB, this.userDB, this.passwordDB);
             System.out.println("✅ Conexión establecida desde Config File.");
 
+            //log
+            LOGGER.info("Conexión a BD establecida correctamente.");
+            
         } catch (Exception e) {
             System.err.println("⚠ Fallo al leer config, intentando conexión directa...");
 

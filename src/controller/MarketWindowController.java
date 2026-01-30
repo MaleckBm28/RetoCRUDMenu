@@ -40,10 +40,13 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import java.util.HashMap;
 import java.sql.Connection;
+import java.util.logging.Logger;
 import pull.ConnectionPool;
 
 public class MarketWindowController implements Initializable {
 
+    private static final Logger LOGGER = Logger.getLogger(MarketWindowController.class.getName());
+    
     @FXML
     private GridPane grid;
     @FXML
@@ -215,6 +218,9 @@ public class MarketWindowController implements Initializable {
     @FXML
     private void handleReport(ActionEvent event) {
         Connection con = null;
+        
+        LOGGER.info("El usuario ha solicitado generar el informe PDF.");
+        
         try {
             System.out.println(" Generando informe...");
 
@@ -240,10 +246,12 @@ public class MarketWindowController implements Initializable {
             viewer.setTitle("Informe de Mercado");
             viewer.setVisible(true);
 
+            LOGGER.info("Informe generado con éxito.");
         } catch (Exception e) {
             System.err.println(" Error al generar el informe:");
             e.printStackTrace();
             // Sería buena idea mostrar un Alert de error aquí
+            LOGGER.severe("Error al compilar el informe: " + e.getMessage());
         } finally {
             try {
                 if (con != null) {

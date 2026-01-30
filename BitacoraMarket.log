@@ -1,0 +1,18 @@
+ene 30, 2026 2:14:53 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+ene 30, 2026 2:14:56 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 21 by JavaFX runtime of version 8.0.181
+ene 30, 2026 2:15:08 PM controller.MarketWindowController handleReport
+INFORMACIÓN: El usuario ha solicitado generar el informe PDF.
+ene 30, 2026 2:15:08 PM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+ene 30, 2026 2:15:08 PM net.sf.jasperreports.engine.part.PartComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/parts
+ene 30, 2026 2:15:08 PM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+ene 30, 2026 2:15:08 PM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+ene 30, 2026 2:15:08 PM net.sf.jasperreports.engine.part.PartComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/parts
+ene 30, 2026 2:15:09 PM controller.MarketWindowController handleReport
+INFORMACIÓN: Informe generado con éxito.
