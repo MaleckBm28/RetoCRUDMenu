@@ -19,7 +19,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="Button_LogOut" layoutX="403.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #f33f3f; -fx-border-color: #000000; -fx-font-weight: bold;" text="Log Out" onAction="#cerrarVentana">
+      <Button fx:id="Button_LogOut" layoutX="403.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #f33f3f; -fx-border-color: #000000; -fx-font-weight: bold;" text="Log Out" onAction="#handleLogOut">
          <font>
             <Font size="13.0" />
          </font>
