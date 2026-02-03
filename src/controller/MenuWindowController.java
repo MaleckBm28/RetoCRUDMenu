@@ -41,6 +41,9 @@ public class MenuWindowController implements Initializable {
 
     @FXML
     private Label label_Username;
+    
+    @FXML
+    private Button btnRestock;
 
     private Profile profile;
     private Controller cont;

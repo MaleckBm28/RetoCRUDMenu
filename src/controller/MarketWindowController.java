@@ -40,7 +40,12 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import java.util.HashMap;
 import java.sql.Connection;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import pull.ConnectionPool;
 
 public class MarketWindowController implements Initializable {
@@ -196,9 +201,36 @@ public class MarketWindowController implements Initializable {
         }
     }
 
-    @FXML
-    private void openUser() {
-        System.out.println(" Usuario pulsado");
+   @FXML
+   private Button btnProfile;
+  
+   @FXML
+   private void openUser(ActionEvent event) {
+        try {
+            LOGGER.info("Cerrando sesión y volviendo al Login...");
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LogInWindow.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Login");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            
+            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+            stage.show();
+            
+            LOGGER.info("Ventana de Login abierta .");
+
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Error al intentar abrir la ventana de Login", e);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("No se pudo cargar la vista de Login.");
+            alert.show();
+        }
     }
 
     @FXML
@@ -211,7 +243,7 @@ public class MarketWindowController implements Initializable {
     @FXML
     private void handleClose(ActionEvent event) {
         System.out.println("Cerrando aplicación...");
-        Platform.exit(); // Cierra la app de forma elegante
+        Platform.exit(); 
         System.exit(0);
     }
 
