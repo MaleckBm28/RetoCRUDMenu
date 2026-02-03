@@ -494,4 +494,36 @@ public class DBImplementation implements ClassDAO {
         return products;
     }
 
+   @Override
+    public void updateProduct(Product p) {
+        String sql = "UPDATE PRODUCT SET STOCK = ? WHERE PRODUCT_ID = ?";
+        Connection con = null;
+        
+        try {
+            // CAMBIO CLAVE: Pedimos conexión directa al Pool (más rápido y seguro en bucles)
+            con = pull.ConnectionPool.getConnection();
+            
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, p.getStock());
+            stmt.setInt(2, p.getProductId());
+            
+            int filas = stmt.executeUpdate();
+            
+            if (filas > 0) {
+                // LOGGER.info("Stock actualizado: " + p.getName()); // Comenta esto si sale mucho texto
+            }
+
+        } catch (SQLException e) {
+            LOGGER.severe("Error SQL al actualizar producto: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) stmt.close();
+                if (con != null) con.close(); // ¡IMPORTANTE! Devolver conexión al pool
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
 }

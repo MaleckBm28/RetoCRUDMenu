@@ -44,6 +44,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import pull.ConnectionPool;
@@ -234,10 +235,48 @@ public class MarketWindowController implements Initializable {
     }
 
     @FXML
-    private void handleHelp(ActionEvent event) {
-        System.out.println("ℹ Abriendo ventana de Ayuda...");
-        // AQUÍ pondremos luego el código para abrir el PDF o el Popup
-        // showHelpPopup();
+    private void handleHelp(javafx.event.ActionEvent event) {
+        try {
+            // A. Configuración de la Ventana
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Guía de Usuario");
+            alert.setHeaderText(null); // O ponle algo como "Cómo funciona la Tienda"
+            
+            // B. El Texto de la Guía (Aquí es donde pones TU texto)
+            String contenido = 
+                "GUÍA RÁPIDA DE LA TIENDA:\n\n" +
+                "1. CÓMO COMPRAR:\n" +
+                "   - Selecciona los productos que quieras haciendo clic.\n" +
+                "   - Pulsa 'Añadir al Carrito'.\n\n" +
+                "2. FILTROS:\n" +
+                "   - Usa los menús de arriba para ver solo cartas de un juego específico.\n\n" +
+                "3. OPCIONES EXTRA:\n" +
+                "   - Haz clic derecho en el fondo para refrescar o ver más opciones.\n" +
+                "   - Dale al botón 'Report' para sacar un PDF con el listado actual.\n\n" +
+                "4. SALIR:\n" +
+                "   - Pulsa en tu icono de usuario (arriba derecha) para cerrar sesión.";
+
+            // C. Creamos un área de texto para que se pueda hacer scroll si es muy largo
+            TextArea textArea = new TextArea(contenido);
+            textArea.setEditable(false); // Para que no puedan borrar tu guía
+            textArea.setWrapText(true);  // Para que el texto se ajuste al ancho
+            
+            // D. Ajustamos el tamaño
+            textArea.setMaxWidth(Double.MAX_VALUE);
+            textArea.setMaxHeight(Double.MAX_VALUE);
+            textArea.setPrefSize(400, 300); // Tamaño inicial de la ventana
+
+            // E. Mostrar
+            alert.getDialogPane().setContent(textArea);
+            alert.setResizable(true); // Permitir que el usuario estire la ventana
+            alert.showAndWait();
+            
+            // Opcional: Registrar en el log que se pidió ayuda
+            LOGGER.info("El usuario ha abierto la ventana de Ayuda.");
+
+        } catch (Exception e) {
+            LOGGER.severe("Error al intentar abrir la Ayuda: " + e.getMessage());
+        }
     }
 
     @FXML
@@ -369,4 +408,6 @@ public class MarketWindowController implements Initializable {
             });
         }
     }
+    
+    
 }

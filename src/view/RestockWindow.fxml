@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RestockWindowController">
-    
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="450.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RestockController">
+   <children>
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="30.0" spacing="15.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <children>
+            <Label text="Gestión de Stock (Admin)" textFill="#2c3e50">
+               <font><Font name="System Bold" size="20.0" /></font>
+            </Label>
+            <ComboBox fx:id="cmbGameType" prefWidth="350.0" promptText="Selecciona Juego" />
+            <ComboBox fx:id="cmbAction" prefWidth="350.0" promptText="¿Qué quieres hacer?" />
+            <TextField fx:id="txtQuantity" promptText="Cantidad (Ej: 10)" />
+            <Button fx:id="btnExecute" mnemonicParsing="false" onAction="#handleExecute" prefHeight="35.0" prefWidth="350.0" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Ejecutar Acción">
+               <font><Font name="System Bold" size="14.0" /></font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

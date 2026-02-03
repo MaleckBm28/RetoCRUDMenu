@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 import model.Profile;
 
+//productos
+import model.Product;
 /**
  * Data Access Object interface for database operations.
  * Provides methods to interact with user and admin records in the database.
@@ -21,7 +23,9 @@ public interface ClassDAO {
     public Boolean dropOutUser(String username, String password);
     public Boolean dropOutAdmin(String usernameToDelete, String adminUsername, String adminPassword);
     public Boolean modificarUser (String password, String email, String name, String telephone, String surname, String username, String gender);
-
-  
+   
     List comboBoxInsert();
+    
+    
+    public void updateProduct(Product p);
 }

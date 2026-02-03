@@ -23,6 +23,7 @@ import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import dao.DBImplementation;
 import model.Profile;
+import static org.hibernate.bytecode.BytecodeLogging.LOGGER;
 
 /**
  * Controller for the Login window.
@@ -30,6 +31,8 @@ import model.Profile;
  */
 public class LogInWindowController implements Initializable {
 
+    private static final Logger LOGGER = Logger.getLogger("LogInWindow");
+    
     @FXML
     private TextField TextField_Username;
 
@@ -93,6 +96,9 @@ public class LogInWindowController implements Initializable {
                     controllerWindow.setUsuario(profile);
                     controllerWindow.setCont(cont);
 
+                    //metodo para habilitar boton de reponer
+                    controllerWindow.initData(profile);
+                    
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
                     stage.show();
@@ -109,6 +115,29 @@ public class LogInWindowController implements Initializable {
         }
     }
 
+   @FXML
+    private void handleBack(javafx.event.ActionEvent event) {
+        try {
+            // Cargar la Tienda (MarketWindow)
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MarketWindow.fxml"));
+            Parent root = loader.load();
+            
+            // Abrir Tienda
+            Stage stage = new Stage();
+            stage.setTitle("Tienda de Cartas");
+            stage.setScene(new Scene(root));
+            stage.show();
+            
+            // Cerrar el Login
+            Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+        } catch (IOException e) {
+            LOGGER.severe("Error al volver a la tienda: " + e.getMessage());
+        }
+    }
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Initialization logic if needed

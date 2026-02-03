@@ -30,5 +30,7 @@
          </image>
       </ImageView>
       <Label fx:id="labelIncorrecto" layoutX="11.0" layoutY="315.0" prefHeight="17.0" prefWidth="255.0" textFill="RED" />
+      
+      <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" text="Volver / Salir" style="-fx-background-color: #ff4444; -fx-text-fill: white;" />
    </children>
 </AnchorPane>

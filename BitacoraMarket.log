@@ -239,3 +239,631 @@ feb 03, 2026 10:03:59 AM javafx.fxml.FXMLLoader$ValueElement processValue
 ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
 feb 03, 2026 10:03:59 AM controller.MarketWindowController openUser
 INFORMACIÓN: Ventana de Login abierta .
+feb 03, 2026 12:56:34 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 03, 2026 12:56:38 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 03, 2026 12:56:40 PM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 03, 2026 12:56:41 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 12:56:41 PM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 03, 2026 12:56:47 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 12:56:54 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 12:57:47 PM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Añadidas 10 cajas de Magic
+feb 03, 2026 12:58:14 PM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Añadidas 100 cajas de Magic
+feb 03, 2026 1:00:56 PM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Añadidas 100 cajas de Magic
+feb 03, 2026 1:38:39 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 03, 2026 1:38:42 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:38:44 PM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 03, 2026 1:38:44 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:38:44 PM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 03, 2026 1:38:50 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:38:51 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:38:51 PM controller.RestockController initialize
+INFORMACIÓN: Productos cargados correctamente para gestión de stock.
+feb 03, 2026 1:39:01 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:39:01 PM controller.RestockController initialize
+INFORMACIÓN: Productos cargados correctamente para gestión de stock.
+feb 03, 2026 1:39:05 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:39:23 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pokemon 151 - Elite Box (Nuevo stock: 18)
+feb 03, 2026 1:39:23 PM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Añadidas 10 cajas de Pokemon. Nuevo stock: 18
+feb 03, 2026 1:39:31 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pokemon 151 - Elite Box (Nuevo stock: 28)
+feb 03, 2026 1:39:31 PM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Añadidas 10 cajas de Pokemon. Nuevo stock: 28
+feb 03, 2026 1:39:45 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pokemon 151 - Elite Box (Nuevo stock: 128)
+feb 03, 2026 1:39:45 PM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Añadidas 100 cajas de Pokemon. Nuevo stock: 128
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 16)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 31)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 2)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 32)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 33)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 17)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 3)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 34)
+feb 03, 2026 1:40:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 4)
+feb 03, 2026 1:40:05 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:06 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:07 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:11 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:12 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:12 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:15 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:15 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 37)
+feb 03, 2026 1:40:16 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:16 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:17 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:17 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:19 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:40:52 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 03, 2026 1:40:55 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:41:01 PM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 03, 2026 1:41:01 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:41:02 PM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 03, 2026 1:41:06 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:41:07 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:41:07 PM controller.RestockController initialize
+INFORMACIÓN: Productos cargados correctamente para gestión de stock.
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 31)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 2)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Bulbasaur (Nuevo stock: 31)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 16)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 3)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 4)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Bulbasaur (Nuevo stock: 32)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 32)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 33)
+feb 03, 2026 1:41:13 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 17)
+feb 03, 2026 1:41:14 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:42:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Bulbasaur (Nuevo stock: 34)
+feb 03, 2026 1:42:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 34)
+feb 03, 2026 1:42:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 5)
+feb 03, 2026 1:42:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 6)
+feb 03, 2026 1:42:04 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 18)
+feb 03, 2026 1:42:04 PM controller.RestockController openPacks
+INFORMACIÓN: ADMIN: Apertura de 1 sobres de Pokemon realizada.
+feb 03, 2026 1:42:09 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 35)
+feb 03, 2026 1:42:09 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 19)
+feb 03, 2026 1:42:09 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 7)
+feb 03, 2026 1:42:09 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 8)
+feb 03, 2026 1:42:09 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Bulbasaur (Nuevo stock: 35)
+feb 03, 2026 1:42:09 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:42:13 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:42:14 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:42:14 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:42:16 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:43:06 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:43:06 PM controller.RestockController initialize
+INFORMACIÓN: Productos cargados correctamente para gestión de stock.
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 36)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 9)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 10)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 4)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 37)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 20)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 38)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 39)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 21)
+feb 03, 2026 1:43:10 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 40)
+feb 03, 2026 1:43:10 PM controller.RestockController openPacks
+INFORMACIÓN: ADMIN: Apertura de 2 sobres de Pokemon realizada.
+feb 03, 2026 1:43:21 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:43:39 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:43:39 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 5)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 23)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 13)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 24)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 14)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 6)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 7)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 8)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 41)
+feb 03, 2026 1:43:40 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 9)
+feb 03, 2026 1:43:40 PM controller.RestockController openPacks
+INFORMACIÓN: ADMIN: Apertura de 2 sobres de Pokemon realizada.
+feb 03, 2026 1:45:43 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 03, 2026 1:45:46 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:45:51 PM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 03, 2026 1:45:51 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:45:52 PM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 03, 2026 1:46:06 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:46:29 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:46:29 PM controller.RestockController initialize
+INFORMACIÓN: Productos cargados correctamente para gestión de stock.
+feb 03, 2026 1:48:35 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:48:35 PM controller.RestockController initialize
+INFORMACIÓN: Productos cargados correctamente para gestión de stock.
+feb 03, 2026 1:53:25 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 03, 2026 1:53:27 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:54:34 PM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 03, 2026 1:54:34 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:54:34 PM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 03, 2026 1:54:40 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:54:41 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 1:54:41 PM controller.RestockController initialize
+INFORMACIÓN: Productos cargados. Cantidad: 35
+feb 03, 2026 1:55:05 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pokemon 151 - Elite Box (Nuevo stock: 20)
+feb 03, 2026 1:55:05 PM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Compradas 12 cajas de Pokemon
+feb 03, 2026 1:55:11 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pokemon 151 - Elite Box (Nuevo stock: 8)
+feb 03, 2026 1:55:11 PM controller.RestockController restockPacksFromBoxes
+INFORMACIÓN: ADMIN: Restadas 12 cajas del inventario para abrir sobres.
+feb 03, 2026 1:55:11 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pokemon 151 - Booster Pack (Nuevo stock: 320)
+feb 03, 2026 1:55:11 PM controller.RestockController restockPacksFromBoxes
+INFORMACIÓN: ADMIN: Añadidos 240 sobres al inventario.
+feb 03, 2026 1:55:24 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 31)
+feb 03, 2026 1:55:24 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Squirtle (Nuevo stock: 32)
+feb 03, 2026 1:55:24 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Pikachu Illustrator (Nuevo stock: 2)
+feb 03, 2026 1:55:24 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Charizard Base Set (Nuevo stock: 4)
+feb 03, 2026 1:55:24 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 16)
+feb 03, 2026 1:55:27 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Bulbasaur (Nuevo stock: 31)
+feb 03, 2026 1:55:27 PM dao.DBImplementation updateProduct
+INFORMACIÓN: Stock actualizado en BD para: Mewtwo GX (Nuevo stock: 17)
+feb 03, 2026 1:55:28 PM threads.HiloConnection run
+GRAVE: null
+java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:150)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:723)
+	at pull.ConnectionPool.getConnection(ConnectionPool.java:52)
+	at threads.HiloConnection.run(HiloConnection.java:57)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:917)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:306)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:231)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:138)
+	... 3 more
+
+feb 03, 2026 2:06:38 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 03, 2026 2:06:41 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 03, 2026 2:06:48 PM controller.MarketWindowController handleHelp
+INFORMACIÓN: El usuario ha abierto la ventana de Ayuda.
+feb 03, 2026 2:06:54 PM controller.MarketWindowController handleHelp
+INFORMACIÓN: El usuario ha abierto la ventana de Ayuda.
+feb 03, 2026 2:06:55 PM controller.MarketWindowController handleReport
+INFORMACIÓN: El usuario ha solicitado generar el informe PDF.
+feb 03, 2026 2:06:55 PM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+feb 03, 2026 2:06:55 PM net.sf.jasperreports.engine.part.PartComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/parts
+feb 03, 2026 2:06:55 PM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+feb 03, 2026 2:06:55 PM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+feb 03, 2026 2:06:55 PM net.sf.jasperreports.engine.part.PartComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/parts
+feb 03, 2026 2:06:56 PM controller.MarketWindowController handleReport
+INFORMACIÓN: Informe generado con éxito.
+feb 03, 2026 2:07:25 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 03, 2026 2:07:28 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 03, 2026 2:07:30 PM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 03, 2026 2:07:30 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 03, 2026 2:07:30 PM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 03, 2026 2:07:34 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
