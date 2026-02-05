@@ -1529,3 +1529,21 @@ feb 05, 2026 12:36:14 PM javafx.fxml.FXMLLoader$ValueElement processValue
 ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
 feb 05, 2026 12:36:15 PM javafx.fxml.FXMLLoader$ValueElement processValue
 ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 12:59:23 PM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 05, 2026 12:59:27 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 12:59:32 PM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 12:59:32 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 12:59:33 PM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 12:59:35 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 12:59:40 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 12:59:41 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 12:59:48 PM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181

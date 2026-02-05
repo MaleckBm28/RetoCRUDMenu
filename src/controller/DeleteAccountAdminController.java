@@ -86,6 +86,9 @@ public class DeleteAccountAdminController implements Initializable {
     }
 
     // Delete button action: deletes the selected user
+    /*
+    *
+     */
     @FXML
     private void delete() {
         if (TextFieldPassword.getText().isEmpty()) {
