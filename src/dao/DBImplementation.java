@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 import model.Admin;
+import model.CartItem;
 import model.Product;
 import model.Profile;
 import model.User;
@@ -22,8 +23,7 @@ import threads.HiloConnection;
  * Author: acer
  */
 public class DBImplementation implements ClassDAO {
-    
-    
+
     private static final Logger LOGGER = Logger.getLogger(DBImplementation.class.getName());
 
     private PreparedStatement stmt;
@@ -39,16 +39,11 @@ public class DBImplementation implements ClassDAO {
     // SQL statements
     private final String SQLSINGUPPROFILE = "INSERT INTO PROFILE_ (USERNAME, PASSWORD_, EMAIL, NAME_, TELEPHONE, SURNAME) VALUES (?,?,?,?,?,?);";
     private final String SQLSIGNUPUSER = "INSERT INTO USER_ (USERNAME, GENDER, CARD_NUMBER) VALUES (?,?,?);";
-
     private final String SLQDELETEPROFILE = "DELETE FROM PROFILE_ WHERE USERNAME = ? AND PASSWORD_ = ?;";
-    private final String SLQDELETEPROFILEADMIN = "DELETE p FROM PROFILE_ p JOIN USER_ u ON p.USERNAME = u.USERNAME JOIN ADMIN_ a ON p.USERNAME = a.USERNAME WHERE p.PASSWORD_ = ? AND u.username = ?;";
-
     private final String SLQLOGINUSER = "SELECT p.*, u.GENDER, u.CARD_NUMBER FROM PROFILE_ p JOIN USER_ u ON p.USERNAME= u.USERNAME WHERE u.USERNAME = ? AND p.PASSWORD_ = ?;";
     private final String SLQLOGINADMIN = "SELECT p.*, a.CURRENT_ACCOUNT FROM PROFILE_ p JOIN ADMIN_ a ON p.USERNAME= a.USERNAME WHERE a.USERNAME = ? AND p.PASSWORD_ = ?;";
-
     final String SQLMODIFYPROFILE = "UPDATE PROFILE_ P SET P.PASSWORD_ = ?, P.EMAIL = ?, P.NAME_ = ?, P.TELEPHONE = ?, P.SURNAME = ? WHERE USERNAME = ?;";
     final String SQLMODIFYUSER = "UPDATE USER_ U SET U.GENDER = ? WHERE USERNAME = ?";
-
     private final String SLQSELECTNUSER = "SELECT u.USERNAME FROM USER_ u;";
 
     /**
@@ -69,7 +64,7 @@ public class DBImplementation implements ClassDAO {
 
             //log
             LOGGER.info("Conexión a BD establecida correctamente.");
-            
+
         } catch (Exception e) {
             System.err.println("⚠ Fallo al leer config, intentando conexión directa...");
 
@@ -494,21 +489,21 @@ public class DBImplementation implements ClassDAO {
         return products;
     }
 
-   @Override
+    @Override
     public void updateProduct(Product p) {
         String sql = "UPDATE PRODUCT SET STOCK = ? WHERE PRODUCT_ID = ?";
         Connection con = null;
-        
+
         try {
             // CAMBIO CLAVE: Pedimos conexión directa al Pool (más rápido y seguro en bucles)
             con = pull.ConnectionPool.getConnection();
-            
+
             stmt = con.prepareStatement(sql);
             stmt.setInt(1, p.getStock());
             stmt.setInt(2, p.getProductId());
-            
+
             int filas = stmt.executeUpdate();
-            
+
             if (filas > 0) {
                 // LOGGER.info("Stock actualizado: " + p.getName()); // Comenta esto si sale mucho texto
             }
@@ -518,12 +513,42 @@ public class DBImplementation implements ClassDAO {
             e.printStackTrace();
         } finally {
             try {
-                if (stmt != null) stmt.close();
-                if (con != null) con.close(); // ¡IMPORTANTE! Devolver conexión al pool
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close(); // ¡IMPORTANTE! Devolver conexión al pool
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
-    
+
+   
+
+    /**
+     * Método auxiliar para actualizar stock dentro de una transacción abierta
+     */
+    private void updateProductInTransaction(Connection c, Product p) throws SQLException {
+        String sql = "UPDATE PRODUCT SET STOCK = ? WHERE PRODUCT_ID = ?";
+        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, p.getStock());
+            ps.setInt(2, p.getProductId());
+            ps.executeUpdate();
+        }
+    }
+
+    private void closeResources(Connection c) {
+        try {
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (c != null) {
+                c.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

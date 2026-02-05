@@ -913,3 +913,181 @@ feb 03, 2026 2:21:40 PM controller.MarketWindowController openUser
 INFORMACIÓN: Ventana de Login abierta .
 feb 03, 2026 2:21:41 PM javafx.fxml.FXMLLoader$ValueElement processValue
 ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:06:02 AM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 05, 2026 10:06:05 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:06:45 AM controller.MarketWindowController handleHelp
+INFORMACIÓN: El usuario ha abierto la ventana de Ayuda.
+feb 05, 2026 10:07:06 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 10:07:06 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:07:06 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 10:07:08 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:31 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 10:10:31 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:31 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 10:10:35 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:39 AM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 05, 2026 10:10:41 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:44 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 10:10:44 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:44 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 10:10:46 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:48 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 10:10:48 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:48 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 10:10:55 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:57 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:10:57 AM controller.RestockController initialize
+INFORMACIÓN: Productos cargados. Cantidad: 35
+feb 05, 2026 10:11:04 AM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Compradas 1000 cajas de Magic
+feb 05, 2026 10:11:08 AM controller.RestockController restockPacksFromBoxes
+INFORMACIÓN: ADMIN: Restadas 1000 cajas del inventario para abrir sobres.
+feb 05, 2026 10:11:08 AM controller.RestockController restockPacksFromBoxes
+INFORMACIÓN: ADMIN: Añadidos 36000 sobres al inventario.
+feb 05, 2026 10:11:26 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:11:28 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:11:32 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:11:34 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:11:43 AM controller.MenuWindowController handleLogOut
+INFORMACIÓN: Cerrando sesión del usuario...
+feb 05, 2026 10:11:43 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:11:44 AM controller.MenuWindowController handleLogOut
+INFORMACIÓN: Sesión cerrada. Usuario devuelto a la Tienda como invitado.
+feb 05, 2026 10:11:45 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 10:11:45 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 10:11:45 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 10:11:47 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:38:33 AM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 05, 2026 11:38:37 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:39:17 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 21 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:39:25 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 21 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:39:29 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 21 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:39:34 AM controller.MarketWindowController handleHelp
+INFORMACIÓN: El usuario ha abierto la ventana de Ayuda.
+feb 05, 2026 11:39:35 AM controller.MarketWindowController handleReport
+INFORMACIÓN: El usuario ha solicitado generar el informe PDF.
+feb 05, 2026 11:39:35 AM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+feb 05, 2026 11:39:35 AM net.sf.jasperreports.engine.part.PartComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/parts
+feb 05, 2026 11:39:35 AM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+feb 05, 2026 11:39:35 AM net.sf.jasperreports.engine.component.ComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/components
+feb 05, 2026 11:39:35 AM net.sf.jasperreports.engine.part.PartComponentsEnvironment findBundles
+ADVERTENCIA: Found two components for namespace http://jasperreports.sourceforge.net/jasperreports/parts
+feb 05, 2026 11:39:37 AM controller.MarketWindowController handleReport
+INFORMACIÓN: Informe generado con éxito.
+feb 05, 2026 11:39:40 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 11:39:40 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:39:40 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 11:39:45 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:39:53 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:39:58 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:08 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:28 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:37 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:44 AM controller.MenuWindowController handleLogOut
+INFORMACIÓN: Cerrando sesión del usuario...
+feb 05, 2026 11:40:44 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:44 AM controller.MenuWindowController handleLogOut
+INFORMACIÓN: Sesión cerrada. Usuario devuelto a la Tienda como invitado.
+feb 05, 2026 11:40:46 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 11:40:46 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:46 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 11:40:51 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:53 AM controller.MenuWindowController handleLogOut
+INFORMACIÓN: Cerrando sesión del usuario...
+feb 05, 2026 11:40:53 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:53 AM controller.MenuWindowController handleLogOut
+INFORMACIÓN: Sesión cerrada. Usuario devuelto a la Tienda como invitado.
+feb 05, 2026 11:40:54 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 11:40:54 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:40:54 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 11:41:03 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:41:05 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 9.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:41:05 AM controller.RestockController initialize
+INFORMACIÓN: Productos cargados. Cantidad: 35
+feb 05, 2026 11:41:09 AM controller.RestockController restockPacksFromBoxes
+INFORMACIÓN: ADMIN: Restadas 1 cajas del inventario para abrir sobres.
+feb 05, 2026 11:41:09 AM controller.RestockController restockPacksFromBoxes
+INFORMACIÓN: ADMIN: Añadidos 20 sobres al inventario.
+feb 05, 2026 11:41:14 AM controller.RestockController restockBoxes
+INFORMACIÓN: ADMIN: Compradas 100 cajas de Pokemon
+feb 05, 2026 11:41:17 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:44:34 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:44:46 AM main.Main start
+INFORMACIÓN: >>> INICIO DE LA APLICACIÓN <<<
+feb 05, 2026 11:44:50 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 25 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:44:54 AM controller.MarketWindowController openUser
+INFORMACIÓN: Cerrando sesión y volviendo al Login...
+feb 05, 2026 11:44:54 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:44:54 AM controller.MarketWindowController openUser
+INFORMACIÓN: Ventana de Login abierta .
+feb 05, 2026 11:44:59 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:45:01 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:45:05 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181
+feb 05, 2026 11:45:05 AM javafx.fxml.FXMLLoader$ValueElement processValue
+ADVERTENCIA: Loading FXML document with JavaFX API of version 24.0.1 by JavaFX runtime of version 8.0.181

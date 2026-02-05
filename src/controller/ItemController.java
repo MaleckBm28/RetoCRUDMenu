@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 
 import model.CartItem;
 import model.Product;
+import model.Card;
 import utilities.CartStorage;
 
 public class ItemController {
@@ -24,58 +25,41 @@ public class ItemController {
     @FXML private Label lblPrice;
     @FXML private Spinner<Integer> spinnerAmount;
     @FXML private Button btnAdd;
-    
-    // 1. AÑADE ESTA LÍNEA (Asegúrate que coincide con el fx:id del FXML)
-    @FXML private Label lblStock; 
+    @FXML private Label lblStock;
 
     private Product product;
 
+    // ================== SET DATA ==================
     public void setData(Product product) {
         this.product = product;
 
-        // Datos básicos
         lblName.setText(product.getName());
         lblPrice.setText("€" + String.format("%.2f", product.getPrice()));
 
-        // --- 2. LÓGICA NUEVA DE STOCK VISUAL ---
-        
         int stockTotal = product.getStock();
-        // Consultamos cuánto hay ya en el carrito para restarlo
         int enCarrito = getQuantityAlreadyInCart(product.getProductId());
         int disponiblesReal = stockTotal - enCarrito;
 
-        // Actualizamos la etiqueta visual
         if (lblStock != null) {
             lblStock.setText("Stock: " + disponiblesReal);
         }
 
-        // Configuramos el Spinner y el Botón según lo que REALMENTE queda
         if (disponiblesReal > 0) {
-            // El máximo del spinner es lo que queda disponible, no el total absoluto
             spinnerAmount.setValueFactory(
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(1, disponiblesReal, 1)
             );
             spinnerAmount.setDisable(false);
-
             btnAdd.setDisable(false);
             btnAdd.setText("Add to Cart");
         } else {
-            // Si disponiblesReal es 0 (aunque haya en BD, si está todo en el carrito) bloqueamos
             spinnerAmount.setValueFactory(
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 0, 0)
             );
             spinnerAmount.setDisable(true);
             btnAdd.setDisable(true);
-            
-            // Mensaje diferenciado si es por falta de stock o porque ya lo tienes todo
-            if (stockTotal > 0) {
-                 btnAdd.setText("En tu carrito");
-            } else {
-                 btnAdd.setText("Agotado");
-            }
+            btnAdd.setText(stockTotal > 0 ? "En tu carrito" : "Agotado");
         }
 
-        // Cargar imagen
         try {
             String path = product.getImagePath();
             if (path != null && !path.isEmpty()) {
@@ -89,24 +73,24 @@ public class ItemController {
         }
     }
 
+    // ================== ADD TO CART ==================
     @FXML
     private void addToCart(ActionEvent event) {
+
         if (product == null) return;
 
         Integer qtySelectedObj = spinnerAmount.getValue();
-        if (qtySelectedObj == null || qtySelectedObj == 0) return; // Protección extra
+        if (qtySelectedObj == null || qtySelectedObj == 0) return;
 
         int qtySelected = qtySelectedObj;
-        
-        // Volvemos a calcular por seguridad (por si el usuario tardó mucho en clicar)
+
         int stockTotal = product.getStock();
         int alreadyInCart = getQuantityAlreadyInCart(product.getProductId());
         int available = stockTotal - alreadyInCart;
 
         if (available <= 0) {
             mostrarAlerta("Stock insuficiente", "No quedan unidades disponibles (revisa tu carrito).");
-            // Refrescamos la vista visualmente por si acaso
-            setData(this.product); 
+            setData(this.product);
             return;
         }
 
@@ -116,12 +100,14 @@ public class ItemController {
         }
 
         try {
-            CartStorage.add(product, qtySelected);
-            
-            mostrarAlertaInfo("Carrito", "Añadido: " + product.getName() + " x" + qtySelected);
-            
-            // --- 3. IMPORTANTE: REFRESCAR LA VISTA AL INSTANTE ---
-            // Al llamar a setData de nuevo, se recalcula el stock restante y se actualiza el spinner/etiqueta
+            // 🔥 PASO 2: Product → CartItem (OBJETO COMPLEJO)
+            CartItem item = toCartItem(product, qtySelected);
+
+            CartStorage.add(item);
+
+            mostrarAlertaInfo("Carrito",
+                    "Añadido: " + product.getName() + " x" + qtySelected);
+
             setData(this.product);
 
         } catch (IOException e) {
@@ -129,7 +115,27 @@ public class ItemController {
         }
     }
 
-    // Métodos auxiliares para no repetir código de alertas
+    // ================== PASO 2 ==================
+    private CartItem toCartItem(Product p, int quantity) {
+
+        String rarity = "-";
+        if (p instanceof Card) {
+            rarity = ((Card) p).getRarity();
+        }
+
+        return new CartItem(
+            p.getProductId(),
+            p.getName(),
+            p.getPrice(),
+            quantity,
+            p.getClass().getSimpleName(),   // Card / BoosterPack / BoosterBox
+            p.getGameType().name(),
+            rarity,
+            p.getImagePath()
+        );
+    }
+
+    // ================== ALERTAS ==================
     private void mostrarAlerta(String titulo, String contenido) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(titulo);
@@ -137,7 +143,7 @@ public class ItemController {
         alert.setContentText(contenido);
         alert.showAndWait();
     }
-    
+
     private void mostrarAlertaInfo(String titulo, String contenido) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
@@ -146,6 +152,7 @@ public class ItemController {
         alert.showAndWait();
     }
 
+    // ================== CANTIDAD EN CARRITO ==================
     private int getQuantityAlreadyInCart(int productId) {
         try {
             for (CartItem it : CartStorage.readAll()) {
