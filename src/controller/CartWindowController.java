@@ -34,6 +34,14 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 import utilities.JPAUtil;
 
+/**
+ * Controlador para la ventana del Carrito de Compras.
+ * Esta clase gestiona la visualización de los productos seleccionados, 
+ * el cálculo de totales, la persistencia de compras en la base de datos 
+ * y la generación de reportes de preventa.
+ * * @author Alex
+ * @version 1.0
+ */
 public class CartWindowController implements Initializable {
 
     @FXML
@@ -62,11 +70,17 @@ public class CartWindowController implements Initializable {
     @FXML
     private Button btnBuy;
 
+    /** Menú contextual para interactuar con la tabla de productos. */
     private ContextMenu contextMenu;
 
+    /**
+     * Inicializa el controlador. Configura las columnas de la tabla, 
+     * el menú contextual y carga los elementos almacenados en el carrito.
+     * * @param location Ubicación relativa para el objeto raíz.
+     * @param resources Recursos para localizar el objeto raíz.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         initTableColumns();
         initContextMenu();
         loadCart();
@@ -88,7 +102,9 @@ public class CartWindowController implements Initializable {
         });
     }
 
-    // ================== TABLA ==================
+    /**
+     * Configura las fábricas de valores para las columnas de la TableView.
+     */
     private void initTableColumns() {
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colType.setCellValueFactory(new PropertyValueFactory<>("productType"));
@@ -101,12 +117,14 @@ public class CartWindowController implements Initializable {
         setupImageColumn();
     }
 
+    /**
+     * Configura la celda personalizada para mostrar la imagen del producto en la tabla.
+     */
     private void setupImageColumn() {
         colImage.setCellValueFactory(new PropertyValueFactory<>("imagePath"));
 
         colImage.setCellFactory(col -> new TableCell<CartItem, String>() {
             private final ImageView iv = new ImageView();
-
             {
                 iv.setFitWidth(40);
                 iv.setFitHeight(40);
@@ -116,12 +134,10 @@ public class CartWindowController implements Initializable {
             @Override
             protected void updateItem(String path, boolean empty) {
                 super.updateItem(path, empty);
-
                 if (empty || path == null || path.trim().isEmpty()) {
                     setGraphic(null);
                     return;
                 }
-
                 try {
                     iv.setImage(new Image(getClass().getResourceAsStream(path)));
                     setGraphic(iv);
@@ -132,6 +148,10 @@ public class CartWindowController implements Initializable {
         });
     }
 
+    /**
+     * Lee los artículos del almacenamiento temporal, los carga en la tabla 
+     * y actualiza el Label del costo total.
+     */
     private void loadCart() {
         try {
             List<CartItem> items = CartStorage.readAll();
@@ -146,20 +166,24 @@ public class CartWindowController implements Initializable {
         } catch (Exception e) {
             lblTotal.setText("Total: €0.00");
         }
-
         updateBuyButton();
     }
 
-    // ================== BOTÓN COMPRAR ==================
+    /**
+     * Habilita o deshabilita el botón de compra según el estado de la sesión 
+     * y el contenido del carrito.
+     */
     private void updateBuyButton() {
-        // Session.isLoggedIn() ahora devolverá true porque lo asignamos en el paso anterior
         boolean enabled = Session.isLoggedIn() && !tableCart.getItems().isEmpty();
         btnBuy.setDisable(!enabled);
     }
 
+    /**
+     * Procesa la compra de los artículos. Valida la sesión, la tarjeta de crédito 
+     * asociada al usuario y actualiza el stock en la base de datos mediante JPA.
+     */
     @FXML
     private void buy() {
-
         if (!Session.isLoggedIn()) {
             showAlert("Debes iniciar sesión para realizar una compra");
             updateBuyButton();
@@ -201,26 +225,18 @@ public class CartWindowController implements Initializable {
         confirm.setContentText("Usuario: " + user.getUsername());
 
         if (confirm.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK) {
-
             EntityManager em = JPAUtil.em();
-
             try {
                 em.getTransaction().begin();
-
                 for (CartItem item : tableCart.getItems()) {
-
                     Product product = em.find(Product.class, item.getProductId());
-
                     if (product == null) {
                         throw new RuntimeException("Producto no encontrado");
                     }
 
                     int newStock = product.getStock() - item.getQuantity();
-
                     if (newStock < 0) {
-                        throw new RuntimeException(
-                                "Stock insuficiente para " + product.getName()
-                        );
+                        throw new RuntimeException("Stock insuficiente para " + product.getName());
                     }
 
                     product.setStock(newStock);
@@ -230,17 +246,12 @@ public class CartWindowController implements Initializable {
                     purchase.setProduct(product);
                     purchase.setUser(user);
                     purchase.setPurchaseDate(LocalDate.now());
-
                     em.persist(purchase);
                 }
-
                 em.getTransaction().commit();
-
                 CartStorage.clear();
                 loadCart();
-
                 showAlert("Compra realizada correctamente");
-
             } catch (Exception ex) {
                 if (em.getTransaction().isActive()) {
                     em.getTransaction().rollback();
@@ -253,10 +264,11 @@ public class CartWindowController implements Initializable {
         }
     }
 
-    // ================== CLIC DERECHO ==================
+    /**
+     * Inicializa las opciones del menú contextual de la tabla.
+     */
     private void initContextMenu() {
         contextMenu = new ContextMenu();
-
         MenuItem reload = new MenuItem("🔄 Recargar");
         reload.setOnAction(e -> loadCart());
 
@@ -265,36 +277,48 @@ public class CartWindowController implements Initializable {
             CartStorage.clear();
             loadCart();
         });
-
         contextMenu.getItems().addAll(reload, clear);
     }
 
+    /**
+     * Muestra el menú contextual en la posición del cursor sobre la tabla.
+     * @param e Evento de menú contextual.
+     */
     @FXML
     private void showContextMenu(ContextMenuEvent e) {
         contextMenu.hide();
         contextMenu.show((Node) e.getSource(), e.getScreenX(), e.getScreenY());
     }
 
-    // ================== NAVEGACIÓN ==================
+    /**
+     * Cierra la ventana actual y regresa a la ventana anterior.
+     */
     @FXML
     private void goBack() {
         ((Stage) tableCart.getScene().getWindow()).close();
     }
 
-    // ================== MENU BAR ==================
+    /**
+     * Finaliza la aplicación.
+     */
     @FXML
     private void handleClose() {
         Platform.exit();
     }
 
+    /**
+     * Muestra un mensaje informativo de ayuda en consola.
+     */
     @FXML
     private void handleHelp() {
         System.out.println("Ayuda pulsada desde carrito");
     }
 
+    /**
+     * Genera y muestra un reporte en formato Jasper con el contenido actual del carrito.
+     */
     @FXML
     private void handleReport() {
-
         if (tableCart.getItems().isEmpty()) {
             showAlert("El carrito está vacío");
             return;
@@ -305,21 +329,19 @@ public class CartWindowController implements Initializable {
                     getClass().getResourceAsStream("/report/CartReport.jrxml")
             );
 
-            JRBeanCollectionDataSource dataSource
-                    = new JRBeanCollectionDataSource(tableCart.getItems());
-
-            JasperPrint print = JasperFillManager.fillReport(
-                    report, null, dataSource
-            );
-
+            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(tableCart.getItems());
+            JasperPrint print = JasperFillManager.fillReport(report, null, dataSource);
             JasperViewer.viewReport(print, false);
-
         } catch (Exception e) {
             e.printStackTrace();
             showAlert("Error al generar el reporte");
         }
     }
 
+    /**
+     * Muestra una alerta informativa al usuario.
+     * @param msg Mensaje a mostrar.
+     */
     private void showAlert(String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);

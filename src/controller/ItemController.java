@@ -18,6 +18,13 @@ import model.Product;
 import model.Card;
 import utilities.CartStorage;
 
+/**
+ * Controlador para los elementos individuales (items) que se muestran en el mercado.
+ * Gestiona la visualización de la información de un producto, el control de stock 
+ * disponible en tiempo real y la lógica para añadir unidades al carrito.
+ * * @author Maleck
+ * @version 1.0
+ */
 public class ItemController {
 
     @FXML private ImageView imgProduct;
@@ -27,9 +34,15 @@ public class ItemController {
     @FXML private Button btnAdd;
     @FXML private Label lblStock;
 
+    /** Producto asociado a este controlador de item. */
     private Product product;
 
-    // ================== SET DATA ==================
+    /**
+     * Configura los datos del producto en la vista del item.
+     * Calcula el stock real disponible restando lo que ya se encuentra en el carrito
+     * y configura el Spinner y el botón de añadir según la disponibilidad.
+     * * @param product El objeto Product con la información a mostrar.
+     */
     public void setData(Product product) {
         this.product = product;
 
@@ -73,10 +86,14 @@ public class ItemController {
         }
     }
 
-    // ================== ADD TO CART ==================
+    /**
+     * Gestiona el evento de añadir el producto al carrito de compras.
+     * Valida el stock actual y persiste el cambio en el almacenamiento local 
+     * a través de {@link CartStorage}.
+     * * @param event El evento de acción disparado por el botón.
+     */
     @FXML
     private void addToCart(ActionEvent event) {
-
         if (product == null) return;
 
         Integer qtySelectedObj = spinnerAmount.getValue();
@@ -100,9 +117,7 @@ public class ItemController {
         }
 
         try {
-            // 🔥 PASO 2: Product → CartItem (OBJETO COMPLEJO)
             CartItem item = toCartItem(product, qtySelected);
-
             CartStorage.add(item);
 
             mostrarAlertaInfo("Carrito",
@@ -115,9 +130,13 @@ public class ItemController {
         }
     }
 
-    // ================== PASO 2 ==================
+    /**
+     * Convierte un objeto de tipo Product a un objeto CartItem para su almacenamiento.
+     * * @param p El producto original.
+     * @param quantity La cantidad seleccionada por el usuario.
+     * @return Un nuevo objeto CartItem con la información mapeada.
+     */
     private CartItem toCartItem(Product p, int quantity) {
-
         String rarity = "-";
         if (p instanceof Card) {
             rarity = ((Card) p).getRarity();
@@ -128,14 +147,18 @@ public class ItemController {
             p.getName(),
             p.getPrice(),
             quantity,
-            p.getClass().getSimpleName(),   // Card / BoosterPack / BoosterBox
+            p.getClass().getSimpleName(),
             p.getGameType().name(),
             rarity,
             p.getImagePath()
         );
     }
 
-    // ================== ALERTAS ==================
+    /**
+     * Muestra una alerta de advertencia al usuario.
+     * * @param titulo El título de la ventana.
+     * @param contenido El mensaje informativo.
+     */
     private void mostrarAlerta(String titulo, String contenido) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(titulo);
@@ -144,6 +167,11 @@ public class ItemController {
         alert.showAndWait();
     }
 
+    /**
+     * Muestra una alerta de información al usuario.
+     * * @param titulo El título de la ventana.
+     * @param contenido El mensaje informativo.
+     */
     private void mostrarAlertaInfo(String titulo, String contenido) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
@@ -152,7 +180,12 @@ public class ItemController {
         alert.showAndWait();
     }
 
-    // ================== CANTIDAD EN CARRITO ==================
+    /**
+     * Consulta el almacenamiento para saber cuántas unidades de un producto 
+     * específico ya han sido añadidas al carrito.
+     * * @param productId Identificador único del producto.
+     * @return Cantidad de unidades encontradas en el carrito.
+     */
     private int getQuantityAlreadyInCart(int productId) {
         try {
             for (CartItem it : CartStorage.readAll()) {

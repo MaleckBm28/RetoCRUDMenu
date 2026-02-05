@@ -10,13 +10,25 @@ import java.util.List;
 
 import model.CartItem;
 
+/**
+ * Clase de utilidad para la gestión del almacenamiento persistente del carrito.
+ * Utiliza un archivo CSV ubicado en el directorio personal del usuario para
+ * guardar, leer y modificar los artículos seleccionados durante la sesión.
+ * * @author Alex
+ * @version 1.0
+ */
 public class CartStorage {
 
-    // Fichero en el home del usuario
+    /** Ruta del fichero CSV en el home del usuario. */
     private static final Path FILE =
             Paths.get(System.getProperty("user.home"), "RetoCRUD_cart.csv");
 
-    // ================== ADD (OBJETO COMPLEJO) ==================
+    /**
+     * Añade un artículo al carrito. Si el producto ya existe en el archivo,
+     * incrementa su cantidad. En caso contrario, lo añade como una nueva línea.
+     * * @param newItem El objeto {@link CartItem} que se desea añadir.
+     * @throws IOException Si ocurre un error al leer o escribir en el archivo.
+     */
     public static void add(CartItem newItem) throws IOException {
 
         List<CartItem> items = readAllInternal();
@@ -37,12 +49,22 @@ public class CartStorage {
         writeAll(items);
     }
 
-    // ================== READ ==================
+    /**
+     * Recupera todos los artículos almacenados en el carrito.
+     * * @return Una lista de objetos {@link CartItem}. Si el archivo no existe, devuelve una lista vacía.
+     * @throws IOException Si ocurre un error de lectura.
+     */
     public static List<CartItem> readAll() throws IOException {
         if (!Files.exists(FILE)) return new ArrayList<>();
         return readAllInternal();
     }
 
+    /**
+     * Proceso interno de lectura del archivo CSV.
+     * Parsea cada línea separada por puntos y comas para reconstruir los objetos.
+     * * @return Lista de items procesados.
+     * @throws IOException Si el archivo no es accesible.
+     */
     private static List<CartItem> readAllInternal() throws IOException {
 
         List<CartItem> out = new ArrayList<>();
@@ -80,7 +102,11 @@ public class CartStorage {
         return out;
     }
 
-    // ================== WRITE ==================
+    /**
+     * Sobrescribe el archivo CSV con la lista actualizada de artículos.
+     * * @param items Lista de elementos a persistir.
+     * @throws IOException Si hay errores en la escritura.
+     */
     private static void writeAll(List<CartItem> items) throws IOException {
 
         try (BufferedWriter bw = Files.newBufferedWriter(
@@ -105,7 +131,9 @@ public class CartStorage {
         }
     }
 
-    // ================== CLEAR ==================
+    /**
+     * Elimina físicamente el archivo del carrito, vaciando todos sus elementos.
+     */
     public static void clear() {
         try {
             Files.deleteIfExists(FILE);

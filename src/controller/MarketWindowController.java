@@ -49,6 +49,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import pull.ConnectionPool;
 
+
+/**
+ * Controlador principal de la ventana del Mercado (MarketWindow).
+ * Gestiona la visualización dinámica de productos mediante un GridPane,
+ * el filtrado avanzado por tipo de juego y rareza, y la navegación
+ * hacia el carrito y la generación de informes.
+ * * @author Maleck
+ * @version 1.0
+ */
 public class MarketWindowController implements Initializable {
 
     private static final Logger LOGGER = Logger.getLogger(MarketWindowController.class.getName());
@@ -64,16 +73,27 @@ public class MarketWindowController implements Initializable {
     private DBImplementation db = new DBImplementation();
 
     
-    //nuevo
+    /** Perfil del usuario que ha iniciado sesión. */
     private model.Profile profile;
 
+    
+    /**
+     * Establece el perfil del usuario actual para personalizar la experiencia.
+     * @param profile El perfil del usuario obtenido tras el login.
+     */
     public void setProfile(model.Profile profile) {
         this.profile = profile;
         
         LOGGER.info("Perfil cargado en Market: " + profile.getUsername());
     }
 
-    
+    /**
+     * Inicializa la interfaz de usuario del mercado.
+     * Configura el almacenamiento de sesión, los filtros de búsqueda y 
+     * realiza la carga inicial de los productos desde la base de datos.
+     * * @param location La ubicación relativa para el objeto raíz.
+     * @param resources Los recursos para localizar el objeto raíz.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadDataFromDatabase();
@@ -198,7 +218,12 @@ public class MarketWindowController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * Abre la ventana del Carrito de compras (CartWindow).
+     * Este método se dispara al pulsar el botón con ID #openCarrito.
+     * @see controller.CartWindowController
+     */
     @FXML
     private void openCart() {
         try {
@@ -297,6 +322,12 @@ public class MarketWindowController implements Initializable {
         System.exit(0);
     }
 
+    
+    /**
+     * Genera un informe visual de los productos disponibles en el mercado
+     * utilizando JasperReports.
+     * @param event El evento de acción que dispara el reporte.
+     */
     @FXML
     private void handleReport(ActionEvent event) {
         Connection con = null;
