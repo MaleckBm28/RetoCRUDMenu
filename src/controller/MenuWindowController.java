@@ -25,15 +25,15 @@ import model.Admin;
 import model.Profile;
 import model.User;
 import static org.hibernate.bytecode.BytecodeLogging.LOGGER;
+import utilities.Session;
 
 /**
- * Controller for the main Menu window.
- * Handles navigation to modify, delete, and logout actions.
+ * Controller for the main Menu window. Handles navigation to modify, delete, and logout actions.
  */
 public class MenuWindowController implements Initializable {
 
     private static final Logger LOGGER = Logger.getLogger("LogInWindow");
-    
+
     @FXML
     private Button Button_Delete;
 
@@ -45,16 +45,24 @@ public class MenuWindowController implements Initializable {
 
     @FXML
     private Label label_Username;
-    
+
     @FXML
     private Button btnRestock;
 
-    private Profile profile;
+    @FXML
+    private Button btnBackToMarket;
+
+    private model.Profile profile;
     private Controller cont;
 
     public void setUsuario(Profile profile) {
         this.profile = profile;
         label_Username.setText(profile.getUsername());
+    }
+
+    public void setProfile(model.Profile profile) {
+        this.profile = profile;
+        LOGGER.info("Sesión vinculada en el Market para el usuario: " + profile.getUsername());
     }
 
     public void setCont(Controller cont) {
@@ -91,8 +99,7 @@ public class MenuWindowController implements Initializable {
     }
 
     /**
-     * Opens the Delete Account window depending on profile type.
-     * Users open DeleteAccount; Admins open DeleteAccountAdmin.
+     * Opens the Delete Account window depending on profile type. Users open DeleteAccount; Admins open DeleteAccountAdmin.
      */
     @FXML
     private void delete() {
@@ -143,17 +150,25 @@ public class MenuWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // Initialization logic if needed
     }
-    
+
     // coger datos y revisar si es admin
     public void initData(model.Profile user) {
-        // Solo si es Admin mostramos el botón
-        if (user instanceof model.Admin) { 
+        this.profile = user; // Guardamos el perfil para usarlo después
+
+        if (user instanceof model.Admin) {
             btnRestock.setVisible(true);
+            if (btnBackToMarket != null) {
+                btnBackToMarket.setVisible(false);
+            }
         } else {
             btnRestock.setVisible(false);
+            // El botón de volver al market solo es para usuarios normales
+            if (btnBackToMarket != null) {
+                btnBackToMarket.setVisible(true);
+            }
         }
     }
-    
+
     @FXML
     private void handleOpenRestock(javafx.event.ActionEvent event) {
         try {
@@ -166,7 +181,7 @@ public class MenuWindowController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void handleLogOut(javafx.event.ActionEvent event) {
         try {
@@ -176,21 +191,50 @@ public class MenuWindowController implements Initializable {
             // IMPORTANTE: Ahora apunta a MarketWindow, no a LogInWindow
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MarketWindow.fxml"));
             Parent root = loader.load();
-            
+
             // 2. Mostrar la Tienda
             Stage stage = new Stage();
             stage.setTitle("Tienda de Cartas");
             stage.setScene(new Scene(root));
             stage.show();
-            
+
             // 3. Cerrar el Menú de Usuario
             Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
             currentStage.close();
-            
+
             LOGGER.info("Sesión cerrada. Usuario devuelto a la Tienda como invitado.");
 
         } catch (IOException e) {
             LOGGER.severe("Error al intentar volver a la tienda tras logout: " + e.getMessage());
         }
     }
+
+    @FXML
+    private void handleBackToMarket(ActionEvent event) {
+        try {
+            // IMPORTANTE: Convertimos Profile a User para que Session.setUser lo acepte
+            if (this.profile instanceof model.User) {
+                utilities.Session.setUser((model.User) this.profile);
+            }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MarketWindow.fxml"));
+            Parent root = loader.load();
+
+            // Ahora ya no dará error porque añadimos el método en el paso anterior
+            MarketWindowController marketController = loader.getController();
+            marketController.setProfile(this.profile);
+
+            Stage stage = new Stage();
+            stage.setTitle("Tienda de Cartas");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+        } catch (IOException e) {
+            LOGGER.severe("Error al volver al market: " + e.getMessage());
+        }
+    }
+
 }

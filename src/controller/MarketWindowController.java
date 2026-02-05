@@ -63,6 +63,17 @@ public class MarketWindowController implements Initializable {
     private List<Product> allProducts = new ArrayList<>();
     private DBImplementation db = new DBImplementation();
 
+    
+    //nuevo
+    private model.Profile profile;
+
+    public void setProfile(model.Profile profile) {
+        this.profile = profile;
+        
+        LOGGER.info("Perfil cargado en Market: " + profile.getUsername());
+    }
+
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadDataFromDatabase();

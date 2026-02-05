@@ -66,6 +66,7 @@ public class CartWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         initTableColumns();
         initContextMenu();
         loadCart();
@@ -151,10 +152,8 @@ public class CartWindowController implements Initializable {
 
     // ================== BOTÓN COMPRAR ==================
     private void updateBuyButton() {
-        boolean enabled
-                = Session.isLoggedIn()
-                && !tableCart.getItems().isEmpty();
-
+        // Session.isLoggedIn() ahora devolverá true porque lo asignamos en el paso anterior
+        boolean enabled = Session.isLoggedIn() && !tableCart.getItems().isEmpty();
         btnBuy.setDisable(!enabled);
     }
 
